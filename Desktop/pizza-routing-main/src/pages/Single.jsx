@@ -37,7 +37,7 @@ export default function Single() {
         <div className="card mt-3">
           <div className="card-body">
             <h5 className="card-title">{item.name}</h5>
-            <p className="card-text">{item.ename}</p>
+            <p className="card-text">{item.email}</p>
             <p className="card-text"><b>ID:</b> {item.id}</p>
           </div>
         </div>
