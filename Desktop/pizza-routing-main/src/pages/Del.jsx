@@ -9,7 +9,7 @@ export default function Del() {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`https://itmp.sulla.hu/api/users/${id}`);
+      await axios.delete(`https://itmp.sulla.hu/users/${id}`);
       setMsg("Sikeres törlés!");
     } catch (err) {
       if (!err.response) {

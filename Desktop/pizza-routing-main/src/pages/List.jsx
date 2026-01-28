@@ -8,7 +8,7 @@ export default function List() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("https://itmp.sulla.hu/api/users")
+    axios.get("https://itmp.sulla.hu/users")
       .then(res => {
         setItems(res.data);
         setLoading(false);

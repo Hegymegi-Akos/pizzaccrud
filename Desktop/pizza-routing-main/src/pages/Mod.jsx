@@ -11,7 +11,7 @@ export default function Mod() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://itmp.sulla.hu/api/users/${id}`, { name, email });
+      await axios.put(`https://itmp.sulla.hu/users/${id}`, { name, email });
       setMsg("Sikeres módosítás!");
     } catch (err) {
       // Ha a backend nem elérhető, jelezzük a felhasználónak és szimuláljuk a sikert

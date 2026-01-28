@@ -10,7 +10,7 @@ export default function Single() {
   const handleFetch = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`https://itmp.sulla.hu/api/users/${id}`);
+      const res = await axios.get(`https://itmp.sulla.hu/users/${id}`);
       setItem(res.data);
       setMsg("");
     } catch (err) {

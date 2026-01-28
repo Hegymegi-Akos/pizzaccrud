@@ -15,7 +15,7 @@ export default function Upd() {
     try {
       // if email state present use that, else fall back to ename
       const payload = { name, email: email || ename };
-      await axios.patch(`https://itmp.sulla.hu/api/users/${id}`, payload);
+      await axios.patch(`https://itmp.sulla.hu/users/${id}`, payload);
       setMsg("Sikeres frissítés!");
     } catch (err) {
       if (!err.response) {
