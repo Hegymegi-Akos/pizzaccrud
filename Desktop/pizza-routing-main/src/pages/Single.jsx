@@ -14,10 +14,10 @@ export default function Single() {
       setItem(res.data);
       setMsg("");
     } catch (err) {
-      // Ha a backend nem elérhető, töltsünk demo elemet
+      // Ha a backend nem elérhető, jelezzük
       if (!err.response) {
-        setItem({ id: id, name: `Demo felhasználó ${id}`, email: `demo${id}@example.com` });
-        setMsg("Offline demo: helyi minta betöltve");
+        setMsg("Hiba a lekéréskor!");
+        setItem(null);
       } else {
         setMsg("Hiba a lekéréskor!");
         setItem(null);
