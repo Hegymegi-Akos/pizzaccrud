@@ -12,7 +12,11 @@ export default function Del() {
       await axios.delete(`https://itmp.sulla.hu/api/users/${id}`);
       setMsg("Sikeres törlés!");
     } catch (err) {
-      setMsg("Hiba a törléskor!");
+      if (!err.response) {
+        setMsg("Offline demo: a törlés szimulálva (nem lett elküldve).");
+      } else {
+        setMsg("Hiba a törléskor!");
+      }
     }
   };
 

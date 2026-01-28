@@ -14,7 +14,14 @@ export default function List() {
         setLoading(false);
       })
       .catch(err => {
-        setError("Hiba a lekéréskor");
+        // Ha a backend nem elérhető, töltsünk be demo mintát, hogy a UI tesztelhető legyen
+        const demo = [
+          { id: 1, name: "Teszt Felhasználó 1", email: "teszt1@example.com" },
+          { id: 2, name: "Teszt Felhasználó 2", email: "teszt2@example.com" },
+          { id: 3, name: "Teszt Felhasználó 3", email: "teszt3@example.com" }
+        ];
+        setItems(demo);
+        setError("Hiba a lekéréskor — demo adat betöltve");
         setLoading(false);
       });
   }, []);

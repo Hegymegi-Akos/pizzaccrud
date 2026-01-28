@@ -18,7 +18,11 @@ export default function Upd() {
       await axios.patch(`https://itmp.sulla.hu/api/users/${id}`, payload);
       setMsg("Sikeres frissítés!");
     } catch (err) {
-      setMsg("Hiba a frissítéskor!");
+      if (!err.response) {
+        setMsg("Offline demo: a frissítés szimulálva (nem lett elküldve).");
+      } else {
+        setMsg("Hiba a frissítéskor!");
+      }
     }
   };
 

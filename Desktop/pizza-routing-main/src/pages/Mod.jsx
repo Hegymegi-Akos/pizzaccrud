@@ -14,7 +14,12 @@ export default function Mod() {
       await axios.put(`https://itmp.sulla.hu/api/users/${id}`, { name, email });
       setMsg("Sikeres módosítás!");
     } catch (err) {
-      setMsg("Hiba a módosításkor!");
+      // Ha a backend nem elérhető, jelezzük a felhasználónak és szimuláljuk a sikert
+      if (!err.response) {
+        setMsg("Offline demo: a módosítás szimulálva (nem lett elküldve).");
+      } else {
+        setMsg("Hiba a módosításkor!");
+      }
     }
   };
 

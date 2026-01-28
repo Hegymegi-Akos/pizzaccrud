@@ -14,8 +14,14 @@ export default function Single() {
       setItem(res.data);
       setMsg("");
     } catch (err) {
-      setMsg("Hiba a lekéréskor!");
-      setItem(null);
+      // Ha a backend nem elérhető, töltsünk demo elemet
+      if (!err.response) {
+        setItem({ id: id, name: `Demo felhasználó ${id}`, email: `demo${id}@example.com` });
+        setMsg("Offline demo: helyi minta betöltve");
+      } else {
+        setMsg("Hiba a lekéréskor!");
+        setItem(null);
+      }
     }
   };
 
